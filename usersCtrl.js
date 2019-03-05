@@ -82,7 +82,9 @@ module.exports = {
     },
     // this one is good
     create: ( req, res, next ) => {
-        let id = users.length + 1;
+        let index = users.length - 1; 
+        
+        let id = users[index].id + 1;
         const { first_name, last_name, email, gender, language, age, city, state, type, favorites } = req.body;
         let user = {
             id: id,
